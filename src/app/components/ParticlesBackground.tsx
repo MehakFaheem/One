@@ -4,10 +4,10 @@ import { useEffect } from 'react';
 
 const SpaceCanvas = () => {
   useEffect(() => {
-    let canvas = document.getElementById('space-canvas') as HTMLCanvasElement | null;
+    const canvas = document.getElementById('space-canvas') as HTMLCanvasElement | null;
     if (!canvas) return;
 
-    let ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     const drawBackground = () => {
