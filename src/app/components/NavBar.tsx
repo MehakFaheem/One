@@ -8,17 +8,17 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full bg-white/10 backdrop-blur-md z-50 py-4 px-8">  
+    <nav className="fixed top-0 w-full bg-transparent z-50 py-4 px-8">  
     <div className="flex justify-between items-center max-w-6xl mx-auto">  
     {/* Logo */}  
     <span className="text-2xl font-serif text-amber-500">ONE</span>  
 
     {/* Nav Links */}  
     <div className="hidden md:flex gap-8 font-medium">  
-      <a href="#" className="text-amber-400 relative px-3 py-1 pointer-events-auto no-underline after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#D4AF37] after:transition-all after:duration-300 hover:after:w-full hover:text-cyan-950">Home</a>  
-      <a href="#" className="text-amber-400 relative px-3 py-1 pointer-events-auto no-underline after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#D4AF37] after:transition-all after:duration-300 hover:after:w-full hover:text-cyan-950">About</a>  
-      <a href="#" className="text-amber-400 relative px-3 py-1 pointer-events-auto no-underline after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#D4AF37] after:transition-all after:duration-300 hover:after:w-full hover:text-cyan-950">Destinations</a>  
-      <a href="#" className="text-amber-400 relative px-3 py-1 pointer-events-auto no-underline after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#D4AF37] after:transition-all after:duration-300 hover:after:w-full hover:text-cyan-950">Contact</a>  
+      <a href="#" className="text-black relative px-3 py-1 pointer-events-auto no-underline after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#D4AF37] after:transition-all after:duration-300 hover:after:w-full hover:text-cyan-950">Home</a>  
+      <a href="#" className="text-black relative px-3 py-1 pointer-events-auto no-underline after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#D4AF37] after:transition-all after:duration-300 hover:after:w-full hover:text-cyan-950">About</a>  
+      <a href="#" className="text-black relative px-3 py-1 pointer-events-auto no-underline after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#D4AF37] after:transition-all after:duration-300 hover:after:w-full hover:text-cyan-950">Destinations</a>  
+      <a href="#" className="text-black relative px-3 py-1 pointer-events-auto no-underline after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#D4AF37] after:transition-all after:duration-300 hover:after:w-full hover:text-cyan-950">Contact</a>  
     </div>  
 
     {/* CTA Button */}  

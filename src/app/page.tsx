@@ -20,11 +20,11 @@ const Home  = () => {
 
       {/* Overlay Text */}  
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">  
-        <h1 className="text-4xl md:text-7xl font-serif text-white mb-2 pt-12">  
+        <h1 className="text-4xl font-bold md:text-shadow-amber-300 md:text-7xl text-black mb-2 pt-12">  
           Some places exist to touch your soul—
         </h1>  
-        <p className="text-xl text-shadow-medium text-black font-serif shadow-2xl">  
-          Welcome to <span className="italic font-bold ">ONE</span>  
+        <p className="text-xl text-white shadow-2xl">  
+          Welcome to <span className="italic font-bold">ONE</span>  
         </p>  
       </div>  
     </div>  
