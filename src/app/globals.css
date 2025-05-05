@@ -1,21 +1,28 @@
 @import "tailwindcss";
-  @layer utilities {
-    .text-shadow-soft {
-      text-shadow: 0 0 4px #fff, 0 0 6px rgb(203, 211, 211);
-    }
-  
-    .text-shadow-medium {
-      text-shadow: 0 0 6px #fff, 0 0 12px rgb(209, 216, 216), 0 0 18px rgb(210, 216, 216);
-    }
-  
-    .text-shadow-strong {
-      text-shadow: 0 0 8px #fff, 0 0 16px rgb(245, 254, 254), 0 0 24px rgb(185, 191, 191), 0 0 32px rgb(234, 253, 253);
-    }
-  }  
-  .condensed-one-regular {
-    font-family: "Condensed-One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+@import '@fontsource/playfair-display';
+
+@layer utilities {
+  .text-shadow-soft {
+    text-shadow: 0 0 4px #fff, 0 0 6px rgb(203, 211, 211);
   }
-  
-  
+
+  .text-shadow-medium {
+    text-shadow: 0 0 6px #fff, 0 0 12px rgb(209, 216, 216), 0 0 18px rgb(210, 216, 216);
+  }
+
+  .text-shadow-strong {
+    text-shadow: 0 0 8px #fff, 0 0 16px rgb(245, 254, 254), 0 0 24px rgb(185, 191, 191), 0 0 32px rgb(234, 253, 253);
+  }
+}  
+.condensed-one-regular {
+  font-family: "Condensed-One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

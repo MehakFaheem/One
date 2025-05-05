@@ -1,13 +1,37 @@
 import { Manrope } from 'next/font/google';
 const manrope = Manrope({ subsets: ['latin'] });
+import { Playfair_Display } from 'next/font/google';
+import Destinations from './components/Destinations';
+import ExperienceHighlights from './components/ExperienceHighlights ';
+import GuestStories from './components/GuestStories';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: 'swap',
+});
 
 const Home  = () => {
   return (
-    <div className={`${manrope.className}`}>
-    <p className="flex justify-center font-semibold items-center h-screen w-screen text-sm absolute top-0 left-0 z-10 text-amber-50 text-shadow-medium">
-      Some places exist to touch your soul — welcome to&nbsp;
-      <span className="italic">one.</span></p>
-    </div>
+    <main className={manrope.className}>
+    <div className="relative h-screen overflow-hidden">  
+      {/* Video */}  
+      <video autoPlay loop muted className="w-full h-full object-cover" src="bg.mp4" />  
+
+      {/* Overlay Text */}  
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">  
+        <h1 className="text-4xl md:text-7xl font-serif text-white mb-2 pt-12">  
+          Some places exist to touch your soul—
+        </h1>  
+        <p className="text-xl text-shadow-medium text-black font-serif shadow-2xl">  
+          Welcome to <span className="italic font-bold ">ONE</span>  
+        </p>  
+      </div>  
+    </div>  
+    <Destinations />
+    <ExperienceHighlights />
+    <GuestStories />
+    </main>
   )
 }
 export default Home
