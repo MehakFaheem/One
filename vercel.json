@@ -1,4 +1,3 @@
 {
-    "buildCommand": "npx vercel-env && git lfs install && git lfs pull && next build"
+    "buildCommand": "git lfs install && git lfs pull && next build"
 }
-  
