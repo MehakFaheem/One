@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/NavBar";
-import ParticlesBackground from "./components/ParticlesBackground";
 import Footer from "./components/Footer";
 
 const inter = Inter({ 
@@ -23,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body className="antialiased">
-        {/* <ParticlesBackground /> */}
         <Navbar />
         {children}
         <Footer />
