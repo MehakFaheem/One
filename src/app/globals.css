@@ -26,21 +26,28 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-video {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-.active .group-hover\:opacity-100 {
-  opacity: 1 !important;
+/* Mobile touch support */
+.active .opacity-100 {
+  opacity: 1;
 }
 
-.active .group-hover\:opacity-0 {
-  opacity: 0 !important;
+.active .opacity-0 {
+  opacity: 0;
 }
+
+/* Samsung device fixes */
 @media (max-width: 640px) {
   video {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
   }
+}
+
+/* Better scroll container */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
