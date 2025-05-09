@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { MdOpacity } from 'react-icons/md';
+// import { MdOpacity } from 'react-icons/md';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 
@@ -43,7 +43,7 @@ const GuestStories = () => {
   })
   return (
     <section ref = {ref}
-    className = "py-10 md:py-20 px-4 md:px-8 bg-amber-50/5 overflow-hidden"
+    className = "py-10 md:py-20 px-4 md:px-8 bg-amber-50/5 overflow-hidden "
     >
 
     {/* Animated Title */}
@@ -56,7 +56,7 @@ const GuestStories = () => {
     </motion.h2>
 
     {/* Horizontal Scroll Gallery */} 
-    <div className='flex flex-col-1 md:flex-cols-4 lg:flex-cols-4 md:gap-6 lg:gap-10 overflow-x-auto pb-14 gap-8 px-8 no-scrollbar'>
+    <div className='flex flex-col-1 md:flex-cols-4 lg:flex-cols-4 md:gap-6 lg:gap-10 overflow-x-auto pb-14 gap-8 px-8 no-scrollbar touch-action: pan-x'>
       {guestStories.map((story, index) => (
         <StoryCard 
           key={story.id}
@@ -94,7 +94,12 @@ function StoryCard({story, index, inView} : {story: any, index: number, inView: 
       animate={inView ? {opacity : 1, x : 0} : {}}
       transition={{duration: 0.6, delay: index * 0.2}}
       whileHover={{scale: 1.03}}
-      className='flex-shrink-0 w-[280px] md:w-[320px] rounded-xl overflow-hidden shadow-lg bg-white'>
+      className='flex-shrink-0 w-[280px] md:w-[320px] rounded-xl overflow-hidden shadow-lg bg-white
+      touch-action: pan-y'
+      whileTap={{ scale: 0.98 }}
+      onTouchStart={(e) => e.currentTarget.classList.add('active')}
+      onTouchEnd={(e) => e.currentTarget.classList.remove('active')}
+      >
       
       {/* Video/Image Toggle */}
       <div className='relative group h-48 overflow-hidden'>
@@ -105,12 +110,16 @@ function StoryCard({story, index, inView} : {story: any, index: number, inView: 
         playsInline
         className='w-full h-full object-cover group-hover:opacity-100 opacity-0 absolute inset-0 transition-opacity duration-500' 
         src={story.video}
+        preload="auto"
+        disablePictureInPicture
+        disableRemotePlayback
         />
         <Image  
         src={story.image}
         alt={story.author}
         fill
-        className="object-cover group-hover:opacity-0 transition-opacity duration-500"
+        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+        className="object-cover group-hover:opacity-0 active:opacity-0 transition-opacity duration-500"
         />
       </div>
 
@@ -118,7 +127,7 @@ function StoryCard({story, index, inView} : {story: any, index: number, inView: 
       <div>
         <motion.p
         whileTap={{scale: 0.98}}
-        className='font-serif italic text-lg mb-4'
+        className='italic text-md mb-4 mt-2.5'
         >
           "{story.quote}"
         </motion.p>

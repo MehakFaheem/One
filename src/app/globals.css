@@ -26,3 +26,21 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+video {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+.active .group-hover\:opacity-100 {
+  opacity: 1 !important;
+}
+
+.active .group-hover\:opacity-0 {
+  opacity: 0 !important;
+}
+@media (max-width: 640px) {
+  video {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+}
